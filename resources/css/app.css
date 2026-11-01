@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   WhiteSmile — палитра тем
+   Светлая (по умолчанию) + тёмная
+   ============================================ */
+
+@layer base {
+    :root,
+    [data-theme="light"] {
+        --color-bg: #f8fafc;              /* фон страницы — очень светлый серо-голубой */
+        --color-surface: #ffffff;         /* карточки, панели — белый */
+        --color-surface-2: #f1f5f9;       /* вторичные блоки — светлее серого */
+        --color-text: #1e293b;            /* основной текст — тёмно-серый */
+        --color-text-muted: #64748b;      /* вторичный текст */
+        --color-border: #e2e8f0;          /* границы */
+        --color-accent: #0ea5e9;          /* акцент — голубой */
+        --color-accent-hover: #0284c7;    /* акцент при наведении */
+        --color-accent-soft: #e0f2fe;     /* мягкий акцентный фон */
+        --color-success: #10b981;
+        --color-danger: #ef4444;
+        --color-warning: #f59e0b;
+    }
+
+    [data-theme="dark"] {
+        --color-bg: #0f172a;              /* тёмный фон */
+        --color-surface: #1e293b;         /* карточки в тёмной теме */
+        --color-surface-2: #334155;
+        --color-text: #f1f5f9;
+        --color-text-muted: #94a3b8;
+        --color-border: #334155;
+        --color-accent: #38bdf8;
+        --color-accent-hover: #0ea5e9;
+        --color-accent-soft: #0c4a6e;
+        --color-success: #34d399;
+        --color-danger: #f87171;
+        --color-warning: #fbbf24;
+    }
+
+    html, body {
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+}
+
+/* ============================================
+   Компоненты WhiteSmile
+   ============================================ */
+
+@layer components {
+    .card-service {
+        @apply rounded-2xl p-6 transition-all duration-200;
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-service:hover {
+        box-shadow: 0 8px 24px rgba(14, 165, 233, 0.12);
+        border-color: var(--color-accent);
+    }
+
+    .btn-gold,
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 font-medium transition-all duration-200;
+        background-color: var(--color-accent);
+        color: #ffffff;
+    }
+
+    .btn-gold:hover,
+    .btn-primary:hover {
+        background-color: var(--color-accent-hover);
+        transform: translateY(-1px);
+    }
+
+    .btn-outline {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 font-medium transition-all duration-200;
+        background-color: transparent;
+        border: 1px solid var(--color-accent);
+        color: var(--color-accent);
+    }
+
+    .btn-outline:hover {
+        background-color: var(--color-accent-soft);
+    }
+
+    .section-title {
+        @apply text-3xl md:text-4xl font-bold mb-6;
+        color: var(--color-text);
+    }
+
+    .form-control,
+    .form-select {
+        @apply w-full rounded-xl px-4 py-2.5 transition-all duration-200;
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        color: var(--color-text);
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        @apply outline-none;
+        border-color: var(--color-accent);
+        box-shadow: 0 0 0 3px var(--color-accent-soft);
+    }
+
+    /* Переключатель темы */
+    .theme-toggle {
+        @apply inline-flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200 cursor-pointer;
+        background-color: var(--color-surface-2);
+        color: var(--color-text);
+        border: 1px solid var(--color-border);
+    }
+
+    .theme-toggle:hover {
+        background-color: var(--color-accent-soft);
+        color: var(--color-accent);
+    }
+}
+
+/* ============================================
+   Утилиты
+   ============================================ */
+
+@layer utilities {
+    .text-muted {
+        color: var(--color-text-muted);
+    }
+
+    .bg-surface {
+        background-color: var(--color-surface);
+    }
+
+    .border-default {
+        border-color: var(--color-border);
+    }
+}
