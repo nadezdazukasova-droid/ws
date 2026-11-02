@@ -36,7 +36,7 @@
                 </div>
 
                 <!-- Добавлен класс no-ajax для защиты от перехвата скриптами -->
-                <form action="{{ route('appointments.store') }}" method="POST" id="appointment-form" class="no-ajax">
+                <form action="{{ route('appointments.store') }}" method="POST" id="appointment-form" class="no-ajax" onsubmit="return true;">
                     @csrf
 
                     <!-- Услуга -->
