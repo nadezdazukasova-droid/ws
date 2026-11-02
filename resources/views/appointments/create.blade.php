@@ -92,9 +92,8 @@
                             Свободное время подгрузится после выбора даты.
                         </p>
                     </div>
-
-                    <button type="submit" class="btn-gold w-100 mt-3">Отправить заявку</button>
                 </form>
+                <button type="submit" class="btn-gold w-100 mt-3">Отправить заявку</button>
             </div>
         </div>
     </div>
