@@ -35,7 +35,8 @@
                     </p>
                 </div>
 
-                <form action="{{ route('appointments.store') }}" method="POST" id="appointment-form">
+                <!-- Добавлен класс no-ajax для защиты от перехвата скриптами -->
+                <form action="{{ route('appointments.store') }}" method="POST" id="appointment-form" class="no-ajax">
                     @csrf
 
                     <!-- Услуга -->
