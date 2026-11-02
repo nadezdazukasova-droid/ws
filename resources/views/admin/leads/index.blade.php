@@ -50,20 +50,20 @@
                             </td>
                             <td style="width: 1%; white-space: nowrap;">
                                 @if ($lead->status === 'new')
-                                    <form action="{{ route('admin.leads.processed', $lead->id) }}" method="POST" style="display:inline;">
+                                    <form action="{{ route('admin.leads.processed', $lead->id) }}" method="POST" class="no-ajax" style="display:inline;">
                                         @csrf
                                         @method('PATCH')
                                         <button type="submit" class="btn-icon btn-icon-approve" title="Обработана">✓</button>
                                     </form>
                                 @else
-                                    <form action="{{ route('admin.leads.processed', $lead->id) }}" method="POST" style="display:inline;">
+                                    <form action="{{ route('admin.leads.processed', $lead->id) }}" method="POST" class="no-ajax" style="display:inline;">
                                         @csrf
                                         @method('PATCH')
                                         <button type="submit" class="btn-icon btn-icon-unapprove" title="Вернуть в новые">⊘</button>
                                     </form>
                                 @endif
 
-                                <form action="{{ route('admin.leads.destroy', $lead->id) }}" method="POST" style="display:inline;">
+                                <form action="{{ route('admin.leads.destroy', $lead->id) }}" method="POST" class="no-ajax" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit"
